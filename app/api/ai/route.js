@@ -42,7 +42,7 @@ export async function POST(request) {
     Tone: Direct, urgent but calm, like a targeted emergency broadcast for this exact area
     Format: Location-specific public announcement - reference actual visible features, streets, buildings, and geographical elements from the CCTV image
     CRITICAL REQUIREMENT:
-
+    The people dont need your analysis of the place just analyse it by yourself they only need the important details avoid using deep word its for the publi no need for that 
     BE SPECIFIC: Reference actual buildings, terrain features, and infrastructure visible in the CCTV image
     BE PRECISE: Use exact details about elevation, building types, and local conditions
     BE ACCURATE: Base all recommendations on the specific characteristics of this exact location
