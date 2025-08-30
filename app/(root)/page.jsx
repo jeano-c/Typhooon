@@ -3,7 +3,7 @@ import axios from "axios";
 import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import ReactMarkdown from "react-markdown";
-// Helper function to convert a File object to a Base64 string
+
 const fileToBase64 = (file) => {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();

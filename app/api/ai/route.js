@@ -13,10 +13,26 @@ export async function POST(request) {
     const cctBase64 = body.img;
     const pdfBase64 = body.pdf;
 
-    const prompt =
-      "There is this two file one is image its a cctv snapshot as you can see its a location analyze its all what you can see and the other file is a typhoon report that is incoming to the cctv snapshot i want you to assess what are the possbile damages or the possible result of this weather report and with that make a report that is easily comprehensive because a mass of people will read it and use it as a reference for what they should do like the poeple live near it";
-
-    // Validate that both image and PDF data are present.
+    const prompt = `"I have two files that need analysis:
+      CCTV Image: A surveillance snapshot showing a specific location
+      Typhoon Weather Report: Meteorological data for an incoming typhoon affecting this area
+      Analysis Requirements:
+      Examine the CCTV image to identify:
+      Building types, construction materials, and structural condition
+      Elevation and topography of the area
+      Infrastructure present (roads, power lines, drainage, etc.)
+      Vegetation and natural features
+      Population density indicators
+      Output Needed:
+      Create a clear, descriptive risk assessment report that includes:
+      Location Description: Detailed analysis of what's visible in the CCTV image
+      Vulnerability Assessment: How the observed structures and terrain will respond to the typhoon conditions
+      Risk Levels: Categorized threat levels for different types of damage
+      Public Recommendations: Clear, actionable steps for residents in this area
+      Target Audience: General public who live in or near this location
+      Tone: Professional but easily understandable, avoiding technical jargon
+      Format: Structured report with clear sections and bullet points for quick reference`;
+      
     if (!cctBase64 || !pdfBase64) {
       return NextResponse.json(
         {
