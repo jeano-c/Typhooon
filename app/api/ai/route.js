@@ -14,25 +14,40 @@ export async function POST(request) {
     const pdfBase64 = body.pdf;
 
     const prompt = `"I have two files that need analysis:
-      CCTV Image: A surveillance snapshot showing a specific location
-      Typhoon Weather Report: Meteorological data for an incoming typhoon affecting this area
-      Analysis Requirements:
-      Examine the CCTV image to identify:
-      Building types, construction materials, and structural condition
-      Elevation and topography of the area
-      Infrastructure present (roads, power lines, drainage, etc.)
-      Vegetation and natural features
-      Population density indicators
-      Output Needed:
-      Create a clear, descriptive risk assessment report that includes:
-      Location Description: Detailed analysis of what's visible in the CCTV image
-      Vulnerability Assessment: How the observed structures and terrain will respond to the typhoon conditions
-      Risk Levels: Categorized threat levels for different types of damage
-      Public Recommendations: Clear, actionable steps for residents in this area
-      Target Audience: General public who live in or near this location
-      Tone: Professional but easily understandable, avoiding technical jargon
-      Format: Structured report with clear sections and bullet points for quick reference`;
-      
+    CCTV Image: A surveillance snapshot showing a specific location
+    Typhoon Weather Report: Meteorological data for an incoming typhoon affecting this area
+
+    Analysis Requirements:
+
+    Examine the CCTV image to identify:
+
+    Specific building types, construction materials, and structural condition
+    Exact elevation and topography of the area
+    Precise infrastructure present (roads, power lines, drainage, etc.)
+    Vegetation and natural features
+    Population density indicators
+    Exact geographical features and landmarks visible
+
+
+
+    Output Needed:
+    Create a location-specific public announcement/advisory that includes:
+
+    Current Situation: Precise description of THIS EXACT AREA and incoming typhoon threat
+    Location-Specific Risks: Exact dangers for THIS PARTICULAR AREA based on visible conditions (specific buildings, terrain, elevation)
+    Targeted Actions: Detailed instructions tailored to this specific location's characteristics
+    Precise Safety Warnings: Specific hazards unique to this area (exact flood zones, vulnerable structures, dangerous areas to avoid)
+
+    Target Audience: Residents of this specific location who need immediate, location-tailored information
+    Tone: Direct, urgent but calm, like a targeted emergency broadcast for this exact area
+    Format: Location-specific public announcement - reference actual visible features, streets, buildings, and geographical elements from the CCTV image
+    CRITICAL REQUIREMENT:
+
+    BE SPECIFIC: Reference actual buildings, terrain features, and infrastructure visible in the CCTV image
+    BE PRECISE: Use exact details about elevation, building types, and local conditions
+    BE ACCURATE: Base all recommendations on the specific characteristics of this exact location
+    AVOID VAGUE LANGUAGE: No generic advice - everythin`;
+
     if (!cctBase64 || !pdfBase64) {
       return NextResponse.json(
         {
